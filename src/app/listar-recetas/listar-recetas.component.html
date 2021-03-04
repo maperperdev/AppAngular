@@ -1,0 +1,36 @@
+<!-- <div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div> -->
+<ng-container *ngIf="recetas">
+  <ng-container *ngIf="recetas.length > 0; else elseBlock">
+    <div class="container">
+      <div class="row">
+        <div class="card col-md-4 mx-auto my-5 border border-primary" *ngFor="let receta of recetas">
+          <img
+            class="card-img-top"
+            [src]="receta.fotoReceta"
+            alt="Foto de una receta"
+            width="400"
+            height="400"
+            alt="Imagen de una receta"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ receta.nombreReceta }}</h4>
+            <p class="card-text">{{ receta.textoReceta }}</p>
+            <p>
+              <i>Edad del autor: {{ 2021 - (receta.fechaNac | date: "y") }}</i>
+            </p>
+            <p>
+              <i>Nombre del autor: {{ receta.autor }}</i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <div class="display-3 text-center">No hay recetas guardadas.</div>
+  </ng-template>
+</ng-container>
+
+<!-- <h1 *ngIf="recetas === undefined">No hay recetas guardadas</h1> -->
+<app-footer></app-footer>

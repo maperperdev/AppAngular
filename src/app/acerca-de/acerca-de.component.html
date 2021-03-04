@@ -1,0 +1,129 @@
+<div class="container">
+  <div id="accordion1">
+    <div class="card">
+      <div class="card-header" id="cabecera1">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link"
+            data-toggle="collapse"
+            data-target="#respuesta1"
+            aria-expanded="true"
+            aria-controls="respuesta1"
+          >
+            Datos Personales
+          </button>
+        </h5>
+      </div>
+      <div
+        id="respuesta1"
+        class="collapse show"
+        aria-labelledby="cabecera1"
+        data-parent="#accordion1"
+      >
+        <div class="card-body">
+          <div class="display-4">Miguel Ángel Pereira Pérez</div>
+          <div class="display-5">Segundo de DAW</div>
+          <div class="display-5">Desarrollo Web en el Entorno Cliente</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="cabecera2">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#respuesta2"
+            aria-expanded="false"
+            aria-controls="respuesta2"
+          >
+            Herramientas y tecnologías usadas
+          </button>
+        </h5>
+      </div>
+      <div
+        id="respuesta2"
+        class="collapse"
+        aria-labelledby="cabecera2"
+        data-parent="#accordion1"
+      >
+        <div class="card-body">
+          Para el desarrolo de este proyecto se ha usado el framework de CSS
+          llamado Bootstrap para agregar estilos a la aplicación. En el laddo
+          del servidor se ha usado una base de datos MariaDB gestionada a través
+          de XAMPP con el legunaje de programación PHP. Y en el lado del cliente
+          se ha usado el framework Angular y también JQuery que acompaña a
+          Bootstrap a la hora de hacer la funcionalidad de "arcordion" de esta
+          página, por ejemplo.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="cabecera3">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#respuesta3"
+            aria-expanded="false"
+            aria-controls="respuesta3"
+          >
+            Directivas usadas
+          </button>
+        </h5>
+      </div>
+      <div
+        id="respuesta3"
+        class="collapse"
+        aria-labelledby="cabecera3"
+        data-parent="#accordion1"
+      >
+        <div class="card-body">
+          <p>
+            Se ha usado la directiva *ngIf para en "listar.recetas.component"
+            para advertir al usuario si la base de datos estuviese vacía. En el
+            caso de que esta base de datos contuviese recetas guardadas se ha
+            usado también la directiva *ngFor para listar las recetas.
+          </p>
+					<p>
+						Por último, se ha usado la directiva *ngStyle para cambiar el color de fondo del componente "header.component".
+					</p>
+        </div>
+      </div>
+    </div>
+
+		<div class="card">
+      <div class="card-header" id="cabecera2">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#respuesta4"
+            aria-expanded="false"
+            aria-controls="respuesta4"
+          >
+            Bibliografía
+          </button>
+        </h5>
+      </div>
+      <div
+        id="respuesta4"
+        class="collapse"
+        aria-labelledby="cabecera4"
+        data-parent="#accordion1"
+      >
+        <div class="card-body">
+					<ul>
+						<li>Apuntes de clase <a href="https://oscarb74.bitbucket.io/DWEC/DWEC_06/">Link</a></li>
+						<li>StackOverLfow <a href="https://stackoverflow.com/">Link</a></li>
+						<li> Angular - The Complete Guide (2021 Edition)  <a href="https://www.udemy.com/course/the-complete-guide-to-angular-2/">Link</a></li>
+						<li>A ContracorrienTech <a href="https://www.acontracorrientech.com/">Link</a></li>
+					</ul>
+				</div>
+      </div>
+    </div>
+
+  </div>
+</div>

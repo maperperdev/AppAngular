@@ -1,0 +1,149 @@
+<div class="container">
+  <h1>Registro receta</h1>
+  <form #f="ngForm" name="ngForm">
+    <div class="form-group">
+      <label for="autor">Autor receta</label>
+      <input
+        type="text"
+        name="autor"
+        id="autor"
+        required
+        [(ngModel)]="nuevaReceta.autor"
+        class="form-control"
+        minlength="3"
+        placeholder="Introduzca su nombre"
+        ngModel
+        #autor="ngModel"
+      />
+
+      <div
+        *ngIf="autor.invalid && (autor.dirty || autor.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="autor.errors.required">El nombre es requerido.</div>
+        <div *ngIf="autor.errors.minlength">
+          El nombre del autor ha de tener al menos 3 letras.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNac">Fecha de nacimiento del autor de la receta</label>
+      <input
+        type="date"
+        id="fechaNac"
+        name="fechaNac"
+        [(ngModel)]="nuevaReceta.fechaNac"
+        class="form-control"
+        required
+      />
+      <!-- <div ng-show="ngForm.fechaNac.errors.required">La fecha es requerida.</div> -->
+    </div>
+
+    <div class="form-group">
+      <label for="nombreReceta">Nombre de la receta</label>
+      <input
+        type="text"
+        name="nombreReceta"
+        id="nombreReceta"
+        [(ngModel)]="nuevaReceta.nombreReceta"
+        class="form-control"
+        minlength="5"
+        placeholder="Introduzca el nombre de la receta"
+        required
+        ngModel
+        #nombreReceta="ngModel"
+      />
+
+      <div
+        *ngIf="
+          nombreReceta.invalid && (nombreReceta.dirty || nombreReceta.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="nombreReceta.errors.required">
+          El nombre de la receta es requerido.
+        </div>
+        <div *ngIf="nombreReceta.errors.minlength">
+          El nombre de la receta ha de tener al menos 5 letras.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fotoReceta">Foto de la receta (link a URL)</label>
+      <input
+        type="text"
+        id="fotoReceta"
+        minlength="10"
+        name="fotoReceta"
+        [(ngModel)]="nuevaReceta.fotoReceta"
+        class="form-control"
+        placeholder="Introduzca la URL de la foto de la receta"
+        required
+        ngModel
+        #fotoReceta="ngModel"
+      />
+
+      <div
+        *ngIf="fotoReceta.invalid && (fotoReceta.dirty || fotoReceta.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="fotoReceta.errors.required">
+          La foto (URL) de la receta es requerida.
+        </div>
+        <div *ngIf="fotoReceta.errors.minlength">
+          La URL de la foto de la receta ha de tener al menos 10 letras.
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Texto receta</span>
+      </div>
+      <textarea
+        class="form-control"
+        rows="15"
+        cols="60"
+        id="textoReceta" 
+        name="textoReceta"
+        [(ngModel)]="nuevaReceta.textoReceta"
+        aria-label="With textarea"
+        minlength="10"
+        required
+        ngModel
+        #textoReceta="ngModel"
+      ></textarea>
+
+      <div
+        *ngIf="textoReceta.invalid && (textoReceta.dirty || textoReceta.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="textoReceta.errors.required">
+          La foto (URL) de la receta es requerida.
+        </div>
+        <div *ngIf="textoReceta.errors.minlength">
+          El texto de la receta ha de tener al menos 10 letras.
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+    <br />
+    <br />
+
+    <input
+      type="button"
+      (click)="crearReceta(f); f.reset()"
+      value="Registrar receta"
+      ng-disabled="ngForm.$invalid"
+    />
+  </form>
+</div>
+
+<app-footer></app-footer>
