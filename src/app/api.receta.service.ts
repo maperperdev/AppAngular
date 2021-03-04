@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 	providedIn: 'root'
 })
 export class ApiRecetaService {
-	PHP_API_SERVER = "http://localhost/AppAngular/receta";
+	PHP_API_SERVER = "http://localhost/AppAngular";
 
 	constructor(private httpClient: HttpClient) { }
 
